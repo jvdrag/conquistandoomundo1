@@ -1,15 +1,16 @@
-import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:email_validator/email_validator.dart';
 import '../../bemVindoScreen/viewBemVindo.dart';
+import '../fireBaseAuthLogInScreen.dart';
 
-class BodyHomeScreen extends StatelessWidget {
-  const BodyHomeScreen({Key? key}) : super(key: key);
+class BodyLogInScreen extends StatelessWidget {
+  const BodyLogInScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var screenWidth = MediaQuery.of(context).size.width*0.0391;
+    var screenWidth = MediaQuery.of(context).size.width;
+    var screenHeight = MediaQuery.of(context).size.height;
     var screenWidthPixel = MediaQuery.of(context).size.width;
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
@@ -25,7 +26,7 @@ class BodyHomeScreen extends StatelessWidget {
       ),
       child: Row(
         children: [
-          SizedBox(width: screenWidth*3,),
+          SizedBox(width: screenWidth*.1,),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,24 +51,32 @@ class BodyHomeScreen extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(width: screenWidth*6,),
+          SizedBox(width: screenWidth*.25,),
           Card(
 
-            color: Colors.blue[400],
+            color: Colors.grey[400],
             shape: RoundedRectangleBorder(
               side: BorderSide(color: Colors.white70, width: 1),
               borderRadius: BorderRadius.circular(20),
             ),
             margin: EdgeInsets.all(20.0),
             child: Container(
-              height: 300,
-              width: 250,
+              height: screenWidth >1200 ? 400 : 300,
+              width: screenWidth >1200 ? 310 : 240,
               child: Form(
                 key: formKeyAuthentication,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text('Faca o seu login',
+                    Text('Login',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        //fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text('Bem-Vindo a Plataforma do Coquistando o Mundo!',
                       style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,
@@ -98,6 +107,7 @@ class BodyHomeScreen extends StatelessWidget {
                       width: 200,
                       height: 60,
                       child: TextFormField(
+                        obscureText: true,
                         controller: passwordController,
                         validator: (passwordController) {
                           if (passwordController!.isEmpty || !RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(passwordController)){
@@ -135,9 +145,13 @@ class BodyHomeScreen extends StatelessWidget {
                                   )
                               )
                           ),
-                          onPressed: () {
+                          onPressed: () async {
+
                             final form = formKeyAuthentication.currentState!;
                             if (form.validate()) {
+                              print('aaaaaaaaaaaaaa');
+
+                              await AuthServiceLogIn().loginUser(emailController.text, passwordController.text);
 
                               Navigator.of(context).push(
                                   MaterialPageRoute(

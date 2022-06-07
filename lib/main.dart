@@ -1,12 +1,16 @@
 import 'package:conquistandoomundo/features/bemVindoScreen/viewBemVindo.dart';
+import 'package:conquistandoomundo/features/cadastro/viewCadastroScreen.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
-import 'features/homeScreen/viewHomeScreen.dart';
+import 'features/LogInScreen/viewLogInScreen.dart';
 import 'features/pergunta1/viewPergunta1.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+ /* WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();*/
+  runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -20,9 +24,15 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: ViewHomeScreen(),
+      home: ViewLogInScreen(),
+      /*StreamBuilder(
+          stream: AuthService().firebaseAuth.authStateChanges(),
+          builder: (context, AsyncSnapshot snapshot) {
+            if (snapshot.hasData) {
+              return ViewHomeScreen();
+            }
+            return ViewHomeScreen();
+          }),*/
     );
   }
 }
-
-//2560 x 1600
