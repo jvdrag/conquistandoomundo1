@@ -54,115 +54,131 @@ class BodyLogInScreen extends StatelessWidget {
           SizedBox(width: screenWidth*.25,),
           Card(
 
-            color: Colors.grey[400],
+            color: Colors.grey.withOpacity(0.4),
             shape: RoundedRectangleBorder(
               side: BorderSide(color: Colors.white70, width: 1),
               borderRadius: BorderRadius.circular(20),
             ),
             margin: EdgeInsets.all(20.0),
             child: Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(20.0)),
+              ),
+
               height: screenWidth >1200 ? 400 : 300,
               width: screenWidth >1200 ? 310 : 240,
               child: Form(
                 key: formKeyAuthentication,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    Text('Login',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        //fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text('Bem-Vindo a Plataforma do Coquistando o Mundo!',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        //fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Container(
-                      width: 200,
-                      height: 60,
-                      child: TextFormField(
-                        validator: (emailController) => !EmailValidator.validate(emailController!)
-                            ? 'Enter a valid email'
-                            : null,
-                        controller: emailController,
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.0),
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text('Login',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 24,
+                              //fontWeight: FontWeight.bold,
                             ),
-                            filled: true,
-                            hintStyle: TextStyle(color: Colors.grey[400],
-                                fontSize: 14),
-                            hintText: "Email",
-                            fillColor: Colors.white),
-                      ),
-                    ),
-                    Container(
-                      width: 200,
-                      height: 60,
-                      child: TextFormField(
-                        obscureText: true,
-                        controller: passwordController,
-                        validator: (passwordController) {
-                          if (passwordController!.isEmpty || !RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(passwordController)){
-                            return "Your password should contain Lower and upper\n case letters and a special symbol";
-                          }else{
-                            return null;
-                          }
-                        },
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
-                            filled: true,
-                            hintStyle: TextStyle(color: Colors.grey[400],
-                                fontSize: 14),
-                            hintText: "Senha",
-                            fillColor: Colors.white),
-                      ),
-                    ),
-                    Container(
-                      width: 200,
-                      height: 40,
-                      child: ElevatedButton(
-                          child: Text(
-                              "ENTRAR".toUpperCase(),
-                              style: TextStyle(fontSize: 14)
                           ),
-                          style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                              backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20.0),
-                                      side: BorderSide(color: Colors.blueAccent)
-                                  )
-                              )
-                          ),
-                          onPressed: () async {
-
-                            final form = formKeyAuthentication.currentState!;
-                            if (form.validate()) {
-                              print('aaaaaaaaaaaaaa');
-
-                              await AuthServiceLogIn().loginUser(emailController.text, passwordController.text);
-
-                              Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          BemVindoScreen()
-                                  ));
+                        ],
+                      ),
+                      Text('Bem-Vindo a Plataforma do Coquistando o Mundo!',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          //fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Container(
+                        width: 200,
+                        height: 60,
+                        child: TextFormField(
+                          validator: (emailController) => !EmailValidator.validate(emailController!)
+                              ? 'Enter a valid email'
+                              : null,
+                          controller: emailController,
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              filled: true,
+                              hintStyle: TextStyle(color: Colors.white,
+                                  fontSize: 14),
+                              hintText: "Email",
+                              fillColor: Colors.white),
+                        ),
+                      ),
+                      Container(
+                        width: 200,
+                        height: 60,
+                        child: TextFormField(
+                          obscureText: true,
+                          controller: passwordController,
+                          validator: (passwordController) {
+                            if (passwordController!.isEmpty || !RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$').hasMatch(passwordController)){
+                              return "Your password should contain Lower and upper\n case letters and a special symbol";
+                            }else{
+                              return null;
                             }
-                          }
+                          },
+                          decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10.0),
+                              ),
+                              filled: true,
+                              hintStyle: TextStyle(color: Colors.white,
+                                  fontSize: 14),
+                              hintText: "Senha",
+                              fillColor: Colors.blueGrey.withOpacity(0.4)
+                        ),
+                        ),
                       ),
-                    )
-                  ],
+                      Center(
+                        child: Container(
+
+                          height: 40,
+                          child: ElevatedButton(
+                              child: Container(
+                                child: Text(
+                                    "LOGIN".toUpperCase(),
+                                    style: TextStyle(fontSize: 14)
+                                ),
+                              ),
+                              style: ButtonStyle(
+                                  foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
+                                  backgroundColor: MaterialStateProperty.all<Color>(Colors.blueGrey),
+                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(10.0),
+
+                                      )
+                                  )
+                              ),
+                              onPressed: () async {
+
+                                final form = formKeyAuthentication.currentState!;
+                                if (form.validate()) {
+                                  print('aaaaaaaaaaaaaa');
+
+                                  await AuthServiceLogIn().loginUser(emailController.text, passwordController.text);
+
+                                  Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              BemVindoScreen()
+                                      ));
+                                }
+                              }
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             )
