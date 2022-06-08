@@ -10,7 +10,7 @@ class ViewPergunta1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Color.fromRGBO(229,229,229,255),
+        color: Color.fromRGBO(229, 229, 229, 255),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -21,120 +21,119 @@ class ViewPergunta1 extends StatelessWidget {
                 width: 550,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage("/Perguta1.jpeg"),
-                      fit: BoxFit.cover),
+                      image: AssetImage("/Perguta1.jpeg"), fit: BoxFit.cover),
                 ),
               ),
-              SizedBox(height: 50,),
-              Container(color: Colors.grey[400],
+              SizedBox(
+                height: 50,
+              ),
+              Container(
+                color: Colors.grey[400],
                 height: 400,
                 width: 550,
                 child: Column(
                   children: [
-                    SizedBox(height: 25,),
-
-                    Text('Pergunta 1',
+                    SizedBox(
+                      height: 25,
+                    ),
+                    Text(
+                      'Qual o seu nivel de ingles?',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 31,
                         fontWeight: FontWeight.bold,
-
                       ),
                     ),
-                    SizedBox(height: 50,),
-
+                    SizedBox(
+                      height: 50,
+                    ),
                     Container(
                       height: 40,
                       width: 280,
                       child: ElevatedButton(
-                          child: Text(
-                              "BASICO".toUpperCase(),
-                              style: TextStyle(fontSize: 14,
+                          child: Text("BASICO".toUpperCase(),
+                              style: TextStyle(
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                              )
-                          ),
+                              )),
                           style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                              backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),
-                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              foregroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.blueAccent),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20.0),
-                                      side: BorderSide(color: Colors.transparent,)
-                                  )
-                              )
-                          ),
+                                      side: BorderSide(
+                                        color: Colors.transparent,
+                                      )))),
                           onPressed: () {
-                            Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              ViewPergunta2()
-                                      ));
-                          }
-                      ),
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => ViewPergunta2()));
+                          }),
                     ),
-                    SizedBox(height: 20,),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Container(
                       height: 40,
                       width: 280,
                       child: ElevatedButton(
-                          child: Text(
-                              "INTERMEDIARIO".toUpperCase(),
-                              style: TextStyle(fontSize: 14,
+                          child: Text("INTERMEDIARIO".toUpperCase(),
+                              style: TextStyle(
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                              )
-                          ),
+                              )),
                           style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                              backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),
-                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              foregroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.blueAccent),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20.0),
-                                      side: BorderSide(color: Colors.transparent,)
-                                  )
-                              )
-                          ),
-                          onPressed: ()  {
-                            Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        ViewPergunta2()
-                                ));
-                          }
-                      ),
+                                      side: BorderSide(
+                                        color: Colors.transparent,
+                                      )))),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => ViewPergunta2()));
+                          }),
                     ),
-                    SizedBox(height: 20,),
-
+                    SizedBox(
+                      height: 20,
+                    ),
                     Container(
                       height: 40,
                       width: 280,
                       child: ElevatedButton(
-                          child: Text(
-                              "AVANCADO".toUpperCase(),
-                              style: TextStyle(fontSize: 14,
+                          child: Text("AVANCADO".toUpperCase(),
+                              style: TextStyle(
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
-                              )
-                          ),
+                              )),
                           style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                              backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),
-                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                              foregroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.white),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Colors.blueAccent),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(20.0),
-                                      side: BorderSide(color: Colors.transparent,)
-                                  )
-                              )
-                          ),
-                          onPressed: ()  {
-                            Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        ViewPergunta2()
-                                ));
-                          }
-                      ),
+                                      side: BorderSide(
+                                        color: Colors.transparent,
+                                      )))),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => ViewPergunta2()));
+                          }),
                     ),
-                    SizedBox(height: 100,),
-
+                    SizedBox(
+                      height: 100,
+                    ),
                   ],
                 ),
               )
