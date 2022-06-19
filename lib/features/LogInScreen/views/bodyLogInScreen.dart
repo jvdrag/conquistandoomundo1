@@ -1,8 +1,9 @@
+import 'package:conquistandoomundo/authentication_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:provider/provider.dart';
 import '../../bemVindoScreen/viewBemVindo.dart';
-import '../fireBaseAuthLogInScreen.dart';
 
 class BodyLogInScreen extends StatelessWidget {
   const BodyLogInScreen({Key? key}) : super(key: key);
@@ -147,38 +148,39 @@ class BodyLogInScreen extends StatelessWidget {
                           width: 500,
                           height: 50,
                           child: ElevatedButton(
-                              child: Container(
-                                child: Text("LOGIN",
-                                    style: TextStyle(fontSize: 14)),
-                              ),
-                              style: ButtonStyle(
-                                  foregroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.white),
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.blueGrey),
-                                  shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ))),
-                              onPressed: () async {
-                                print(screenWidth);
+                            child: Container(
+                              child:
+                                  Text("LOGIN", style: TextStyle(fontSize: 14)),
+                            ),
+                            style: ButtonStyle(
+                                foregroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.white),
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.blueGrey),
+                                shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ))),
+                            onPressed: () {
+                              context.read<AuthenticationService>().signIn(
+                                    email: emailController.text.trim(),
+                                    senha: passwordController.text.trim(),
+                                  );
 
-                                final form =
-                                    formKeyAuthentication.currentState!;
-                                if (form.validate()) {
-                                  print('aaaaaaaaaaaaaa');
+                              print(screenWidth);
 
-                                  await AuthServiceLogIn().loginUser(
-                                      emailController.text,
-                                      passwordController.text);
+                              final form = formKeyAuthentication.currentState!;
+                              if (form.validate()) {
+                                print('aaaaaaaaaaaaaa');
 
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => BemVindoScreen()));
-                                }
-                              }),
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => BemVindoScreen()));
+                              }
+                            },
+                          ),
                         ),
                       ],
                     ),
