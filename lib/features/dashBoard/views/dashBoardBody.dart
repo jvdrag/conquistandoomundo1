@@ -1,18 +1,17 @@
 import 'package:flutter/cupertino.dart';
 
-import 'dashBoardAppBar.dart';
+import '../../dashboardAulas/viewAulas.dart';
 
 class DashBoardBody extends StatelessWidget {
   const DashBoardBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
+    return Column(
        children: [
-         DashBoardAppBar()
-        ]
-      ),
+         Expanded(child: ViewAulas()),
+       ]
+
     );
   }
 }

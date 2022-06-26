@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "883994384562",
+    "project_id": "beta-conquistando-4fb10",
+    "storage_bucket": "beta-conquistando-4fb10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:883994384562:android:7e6930410726360c9751ab",
+        "android_client_info": {
+          "package_name": "com.example.conquistandoomundo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "883994384562-ot08o145v4iv4lk0kjc8eshhrd49qdhg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_TJW9gYM6l86ZiPhWkBH1g0EqW6sueYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "883994384562-ot08o145v4iv4lk0kjc8eshhrd49qdhg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

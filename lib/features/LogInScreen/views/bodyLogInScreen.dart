@@ -10,11 +10,11 @@ class BodyLogInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
-    var screenHeight = MediaQuery.of(context).size.height;
     var screenWidthPixel = MediaQuery.of(context).size.width;
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
     final formKeyAuthentication = GlobalKey<FormState>();
+    final double telaTocaDeLayout = 1020.0;
 
 
     return Container(
@@ -25,8 +25,8 @@ class BodyLogInScreen extends StatelessWidget {
             fit: BoxFit.cover),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(width: screenWidth*.1,),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -35,7 +35,7 @@ class BodyLogInScreen extends StatelessWidget {
               Text('Seja bem-Vindo ao\nConquistando o Mundo.',
                 style: TextStyle(
                     color: Colors.white,
-                  fontSize:  screenWidthPixel >1200 ? 44 : 28,
+                  fontSize:  screenWidthPixel >telaTocaDeLayout ? 44 : 28,
                   fontWeight: FontWeight.bold,
 
                 ),
@@ -44,14 +44,13 @@ class BodyLogInScreen extends StatelessWidget {
               Text('Preencha os campos ao lado para acessar\na sua conta e entrar em nossa plataforma',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: screenWidthPixel >1200 ? 20 : 16,
+                fontSize: screenWidthPixel >telaTocaDeLayout ? 20 : 16,
                 //fontWeight: FontWeight.bold,
 
                ),
               )
             ],
           ),
-          SizedBox(width: screenWidth*.25,),
           Card(
 
             color: Colors.grey.withOpacity(0.4),
@@ -62,15 +61,16 @@ class BodyLogInScreen extends StatelessWidget {
             margin: EdgeInsets.all(20.0),
             child: Container(
               decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                borderRadius: BorderRadius.all(Radius.circular(20.0)
+                ),
               ),
 
-              height: screenWidth >1200 ? 400 : 300,
-              width: screenWidth >1200 ? 310 : 240,
+              height: screenWidth >telaTocaDeLayout ? 500 : 400,
+              width: screenWidth >telaTocaDeLayout ? 500 : 400,
               child: Form(
                 key: formKeyAuthentication,
                 child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                  padding: const EdgeInsets.all(30.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -87,15 +87,20 @@ class BodyLogInScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Text('Bem-Vindo a Plataforma do Coquistando o Mundo!',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          //fontWeight: FontWeight.bold,
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text('Bem-Vindo a Plataforma do Coquistando o Mundo!',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: screenWidth >telaTocaDeLayout ? 16 : 14,
+
+                              //fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                       Container(
-                        width: 200,
                         height: 60,
                         child: TextFormField(
                           validator: (emailController) => !EmailValidator.validate(emailController!)
@@ -110,11 +115,10 @@ class BodyLogInScreen extends StatelessWidget {
                               hintStyle: TextStyle(color: Colors.white,
                                   fontSize: 14),
                               hintText: "Email",
-                              fillColor: Colors.white),
+                              fillColor: Colors.grey.withOpacity(0.3)),
                         ),
                       ),
                       Container(
-                        width: 200,
                         height: 60,
                         child: TextFormField(
                           obscureText: true,
@@ -134,18 +138,17 @@ class BodyLogInScreen extends StatelessWidget {
                               hintStyle: TextStyle(color: Colors.white,
                                   fontSize: 14),
                               hintText: "Senha",
-                              fillColor: Colors.blueGrey.withOpacity(0.4)
+                              fillColor: Colors.grey.withOpacity(0.3)
                         ),
                         ),
                       ),
-                      Center(
-                        child: Container(
-
-                          height: 40,
+                      Container(
+                          width: 500,
+                          height: 50,
                           child: ElevatedButton(
                               child: Container(
                                 child: Text(
-                                    "LOGIN".toUpperCase(),
+                                    "LOGIN",
                                     style: TextStyle(fontSize: 14)
                                 ),
                               ),
@@ -160,6 +163,7 @@ class BodyLogInScreen extends StatelessWidget {
                                   )
                               ),
                               onPressed: () async {
+                                print(screenWidth);
 
                                 final form = formKeyAuthentication.currentState!;
                                 if (form.validate()) {
@@ -176,7 +180,6 @@ class BodyLogInScreen extends StatelessWidget {
                               }
                           ),
                         ),
-                      )
                     ],
                   ),
                 ),

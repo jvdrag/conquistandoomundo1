@@ -1,15 +1,42 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ChooseTOEFL_DET_ESSAYBodyMainPage extends StatelessWidget {
-  const ChooseTOEFL_DET_ESSAYBodyMainPage({Key? key}) : super(key: key);
+class AulasMainPage extends StatelessWidget {
+  const AulasMainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      color: Colors.blueAccent,
-      child: Center(child: Text('weeee')),
+    return Column(
+      children: [
+        Container(
+
+          constraints: BoxConstraints.expand(),
+          decoration: const BoxDecoration(
+            color:  Colors.blueAccent,
+            image: DecorationImage(
+                image: AssetImage("/backgroundImage.jpeg"),
+
+                //Trocar Imagem
+                fit: BoxFit.cover),
+          ),
+        ),
+        Container(
+          child: Row(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                  color:  Colors.blueAccent,
+                  image: DecorationImage(
+                      image: AssetImage("/backgroundImage.jpeg"),
+
+                      //Trocar Imagem
+                      fit: BoxFit.cover),
+                ),
+              )
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
