@@ -23,20 +23,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Beta',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: ViewLogInScreen(),
-
-      /*StreamBuilder(
-          stream: AuthServiceCadasto().firebaseAuth.authStateChanges(),
-          builder: (context, AsyncSnapshot snapshot) {
-            if (snapshot.hasData) {
+        title: 'Beta',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: StreamBuilder(
+            stream: AuthServiceCadasto().firebaseAuth.authStateChanges(),
+            builder: (context, AsyncSnapshot snapshot) {
+              if (snapshot.hasData) {
+                return ViewDashBoard();
+              }
               return ViewCadastroScreen();
-            }
-            return ViewCadastroScreen();
-          }),*/
-    );
+            }));
   }
 }
