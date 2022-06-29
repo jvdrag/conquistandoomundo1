@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
               if (snapshot.hasData) {
                 return ViewDashBoard();
               }
-              return AulasMainPage();
+              return ViewAulas();
             }));
   }
 }
