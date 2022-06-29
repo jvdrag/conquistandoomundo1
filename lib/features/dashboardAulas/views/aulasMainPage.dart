@@ -9,33 +9,12 @@ class AulasMainPage extends StatelessWidget {
     return Column(
       children: [
         Container(
-
-          constraints: BoxConstraints.expand(),
-          decoration: const BoxDecoration(
-            color:  Colors.blueAccent,
-            image: DecorationImage(
-                image: AssetImage("/backgroundImage.jpeg"),
-
-                //Trocar Imagem
-                fit: BoxFit.cover),
-          ),
-        ),
-        Container(
-          child: Row(
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                  color:  Colors.blueAccent,
-                  image: DecorationImage(
-                      image: AssetImage("/backgroundImage.jpeg"),
-
-                      //Trocar Imagem
-                      fit: BoxFit.cover),
-                ),
-              )
-            ],
-          ),
-        ),
+            width: 1920,
+            height: 540,
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('/Desktop1.png'), fit: BoxFit.fitWidth),
+            )),
       ],
     );
   }

@@ -1,6 +1,8 @@
 import 'package:conquistandoomundo/features/bemVindoScreen/viewBemVindo.dart';
 import 'package:conquistandoomundo/features/cadastro/fireBaseAuthCadastroScreen.dart';
 import 'package:conquistandoomundo/features/cadastro/viewCadastroScreen.dart';
+import 'package:conquistandoomundo/features/dashboardAulas/viewAulas.dart';
+import 'package:conquistandoomundo/features/dashboardAulas/views/aulasMainPage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'features/LogInScreen/viewLogInScreen.dart';
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
               if (snapshot.hasData) {
                 return ViewDashBoard();
               }
-              return ViewLogInScreen();
+              return AulasMainPage();
             }));
   }
 }
