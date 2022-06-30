@@ -45,7 +45,7 @@ class BodyCadastroScreen extends StatelessWidget {
                 height: 24,
               ),
               Text(
-                'Preencha os campos ao lado para acessar\na sua conta e entrar em nossa plataforma',
+                'Preencha os campos ao lado para criar\na sua conta e entrar em nossa plataforma',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: screenWidthPixel > 1200 ? 20 : 16,
