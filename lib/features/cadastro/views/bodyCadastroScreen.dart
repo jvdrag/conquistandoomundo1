@@ -22,7 +22,7 @@ class BodyCadastroScreen extends StatelessWidget {
       constraints: BoxConstraints.expand(),
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("/backgroundImage.jpeg"), fit: BoxFit.cover),
+            image: AssetImage("/image 2.png"), fit: BoxFit.cover),
       ),
       child: Row(
         children: [
