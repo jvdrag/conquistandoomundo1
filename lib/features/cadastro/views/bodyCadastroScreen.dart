@@ -34,7 +34,7 @@ class BodyCadastroScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Seja bem-Vindo ao\nConquistando o Mundo.',
+                'Seja Bem-Vindo ao\nConquistando o Mundo.',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: screenWidthPixel > 1200 ? 44 : 28,
@@ -73,7 +73,7 @@ class BodyCadastroScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        'Faca o seu login',
+                        'Faça o seu cadastro',
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
@@ -87,7 +87,7 @@ class BodyCadastroScreen extends StatelessWidget {
                         child: TextFormField(
                           validator: (emailController) =>
                               !EmailValidator.validate(emailController!)
-                                  ? 'Digit um email valido'
+                                  ? 'Digite um email válido'
                                   : null,
                           controller: emailController,
                           decoration: InputDecoration(
@@ -111,7 +111,7 @@ class BodyCadastroScreen extends StatelessWidget {
                             if (passwordController!.isEmpty ||
                                 !RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')
                                     .hasMatch(passwordController)) {
-                              return "Sua senha deve conter letras minusculas\ne maiuculas e numeros";
+                              return "Sua senha deve conter letras minúsculas\ne maiúsculas e números";
                             } else {
                               return null;
                             }

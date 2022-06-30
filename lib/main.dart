@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
               if (snapshot.hasData) {
                 return ViewAulas();
               }
-              return ViewLogInScreen();
+              return ViewCadastroScreen();
             }));
   }
 }
