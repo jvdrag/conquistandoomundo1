@@ -1,4 +1,5 @@
 import 'package:conquistandoomundo/features/dashBoard/viewDashBoard.dart';
+import 'package:conquistandoomundo/features/dashboardAulas/viewAulas.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
@@ -22,7 +23,9 @@ class BodyCadastroScreen extends StatelessWidget {
       constraints: BoxConstraints.expand(),
       decoration: const BoxDecoration(
         image: DecorationImage(
-            image: AssetImage("/image 2.png"), fit: BoxFit.cover),
+            opacity: 0.4,
+            image: AssetImage("/image-2.jpeg"),
+            fit: BoxFit.cover),
       ),
       child: Row(
         children: [
@@ -34,7 +37,7 @@ class BodyCadastroScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Seja Bem-Vindo ao\nConquistando o Mundo.',
+                'Seja bem-Vindo ao\nConquistando o Mundo.',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: screenWidthPixel > 1200 ? 44 : 28,
@@ -45,7 +48,7 @@ class BodyCadastroScreen extends StatelessWidget {
                 height: 24,
               ),
               Text(
-                'Preencha os campos ao lado para criar\na sua conta e entrar em nossa plataforma',
+                'Preencha os campos ao lado para acessar\na sua conta e entrar em nossa plataforma',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: screenWidthPixel > 1200 ? 20 : 16,
@@ -73,7 +76,7 @@ class BodyCadastroScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        'Faça o seu cadastro',
+                        'Faca o seu login',
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
@@ -87,7 +90,7 @@ class BodyCadastroScreen extends StatelessWidget {
                         child: TextFormField(
                           validator: (emailController) =>
                               !EmailValidator.validate(emailController!)
-                                  ? 'Digite um email válido'
+                                  ? 'Digite um email valido'
                                   : null,
                           controller: emailController,
                           decoration: InputDecoration(
@@ -111,7 +114,7 @@ class BodyCadastroScreen extends StatelessWidget {
                             if (passwordController!.isEmpty ||
                                 !RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')
                                     .hasMatch(passwordController)) {
-                              return "Sua senha deve conter letras minúsculas\ne maiúsculas e números";
+                              return "Sua senha deve conter letras minusculas\ne maiuculas e numeros";
                             } else {
                               return null;
                             }
@@ -176,7 +179,7 @@ class BodyCadastroScreen extends StatelessWidget {
                                     passwordController.text);
 
                                 Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => ViewDashBoard()));
+                                    builder: (context) => ViewAulas()));
                               }
                             }),
                       )

@@ -10,8 +10,8 @@ class ViewCadastroScreen extends StatelessWidget {
     var screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-
       body: BodyCadastroScreen(),
+      backgroundColor: Color.fromARGB(255, 38, 34, 34),
     );
   }
 }
