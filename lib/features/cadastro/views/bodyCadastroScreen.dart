@@ -76,7 +76,7 @@ class BodyCadastroScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(
-                        'Faca o seu cadastro',
+                        'Faça o seu cadastro',
                         style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
