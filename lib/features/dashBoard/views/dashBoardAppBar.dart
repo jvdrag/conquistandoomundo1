@@ -15,7 +15,6 @@ class DashBoardAppBar extends StatelessWidget {
           SizedBox(
             width: 10,
           ),
-          Image.asset("/imgLogo.png"),
           SizedBox(
             width: 50,
           ),

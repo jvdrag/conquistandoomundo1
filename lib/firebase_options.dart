@@ -21,9 +21,15 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        return android;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for android - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -48,29 +54,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions web = FirebaseOptions(
     apiKey: 'AIzaSyCDpYkzo0qlMYoQ2JYt0aYv7C8T2Asf1Xc',
-    appId: '1:883994384562:web:18b52f6dec5169b09751ab',
+    appId: '1:883994384562:web:88e3c4972c0b1b2b9751ab',
     messagingSenderId: '883994384562',
     projectId: 'beta-conquistando-4fb10',
     authDomain: 'beta-conquistando-4fb10.firebaseapp.com',
     storageBucket: 'beta-conquistando-4fb10.appspot.com',
-    measurementId: 'G-WK1VM5V08C',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyD_TJW9gYM6l86ZiPhWkBH1g0EqW6sueYo',
-    appId: '1:883994384562:android:7e6930410726360c9751ab',
-    messagingSenderId: '883994384562',
-    projectId: 'beta-conquistando-4fb10',
-    storageBucket: 'beta-conquistando-4fb10.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCLjmqgLo621NNjOqaUY80ZooLdNuNAOGc',
-    appId: '1:883994384562:ios:f9a5f56c3423637c9751ab',
-    messagingSenderId: '883994384562',
-    projectId: 'beta-conquistando-4fb10',
-    storageBucket: 'beta-conquistando-4fb10.appspot.com',
-    iosClientId: '883994384562-g815gsgafcnn3negbnpehv5p7egem0co.apps.googleusercontent.com',
-    iosBundleId: 'com.example.conquistandoomundo',
+    measurementId: 'G-DQH71LRDF5',
   );
 }

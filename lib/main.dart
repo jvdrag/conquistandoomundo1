@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             stream: AuthServiceCadasto().firebaseAuth.authStateChanges(),
             builder: (context, AsyncSnapshot snapshot) {
               if (snapshot.hasData) {
-                return ViewAulas();
+                return ViewCadastroScreen();
               }
               return ViewCadastroScreen();
             }));
