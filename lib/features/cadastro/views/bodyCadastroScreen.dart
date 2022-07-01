@@ -123,7 +123,7 @@ class BodyCadastroScreen extends StatelessWidget {
                         child: TextFormField(
                           validator: (emailController) =>
                               !EmailValidator.validate(emailController!)
-                                  ? 'Digite um email valido'
+                                  ? 'Digite um email válido'
                                   : null,
                           controller: emailController,
                           decoration: InputDecoration(
@@ -147,7 +147,7 @@ class BodyCadastroScreen extends StatelessWidget {
                             if (passwordController!.isEmpty ||
                                 !RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')
                                     .hasMatch(passwordController)) {
-                              return "Sua senha deve conter letras minusculas\ne maiuculas e numeros";
+                              return "Sua senha deve conter letras minúsculas,maiúsculas e números";
                             } else {
                               return null;
                             }

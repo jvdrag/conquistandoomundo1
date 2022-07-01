@@ -13,7 +13,8 @@ class AulasMainPage extends StatelessWidget {
             height: 430,
             decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('/Desktop1.png'), fit: BoxFit.fitWidth),
+                  image: AssetImage('assets/Desktop1.png'),
+                  fit: BoxFit.fitWidth),
             )),
         Row(
           children: [
@@ -29,7 +30,7 @@ class AulasMainPage extends StatelessWidget {
                   width: 150,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('/Course_thumbnails.png'),
+                      image: AssetImage('assets/Course_thumbnails.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -48,7 +49,7 @@ class AulasMainPage extends StatelessWidget {
                   width: 150,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('/Mdulo11.png'),
+                      image: AssetImage('assets/Mdulo11.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -67,7 +68,7 @@ class AulasMainPage extends StatelessWidget {
                   width: 150,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('/Mdulo21.png'),
+                      image: AssetImage('assets/Mdulo21.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -86,7 +87,7 @@ class AulasMainPage extends StatelessWidget {
                   width: 150,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('/Mdulo31.png'),
+                      image: AssetImage('assets/Mdulo31.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -105,7 +106,7 @@ class AulasMainPage extends StatelessWidget {
                   width: 150,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('/Mdulo41.png'),
+                      image: AssetImage('assets/Mdulo41.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
