@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Beta',
+        title: 'Conquistando o mundo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             stream: AuthServiceCadasto().firebaseAuth.authStateChanges(),
             builder: (context, AsyncSnapshot snapshot) {
               if (snapshot.hasData) {
-                return ViewCadastroScreen();
+                return ViewDashBoard();
               }
               return ViewCadastroScreen();
             }));

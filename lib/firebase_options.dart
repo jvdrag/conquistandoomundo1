@@ -21,15 +21,9 @@ class DefaultFirebaseOptions {
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for android - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -60,5 +54,23 @@ class DefaultFirebaseOptions {
     authDomain: 'beta-conquistando-4fb10.firebaseapp.com',
     storageBucket: 'beta-conquistando-4fb10.appspot.com',
     measurementId: 'G-DQH71LRDF5',
+  );
+
+  static const FirebaseOptions android = FirebaseOptions(
+    apiKey: 'AIzaSyD_TJW9gYM6l86ZiPhWkBH1g0EqW6sueYo',
+    appId: '1:883994384562:android:91b581fc4d1fa9999751ab',
+    messagingSenderId: '883994384562',
+    projectId: 'beta-conquistando-4fb10',
+    storageBucket: 'beta-conquistando-4fb10.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCLjmqgLo621NNjOqaUY80ZooLdNuNAOGc',
+    appId: '1:883994384562:ios:ad0aef12e5d9d8419751ab',
+    messagingSenderId: '883994384562',
+    projectId: 'beta-conquistando-4fb10',
+    storageBucket: 'beta-conquistando-4fb10.appspot.com',
+    iosClientId: '883994384562-g815gsgafcnn3negbnpehv5p7egem0co.apps.googleusercontent.com',
+    iosBundleId: 'com.example.conquistandoomundo',
   );
 }

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
 import '../../bemVindoScreen/viewBemVindo.dart';
+import '../../cadastro/fireBaseAuthCadastroScreen.dart';
 import '../fireBaseAuthLogInScreen.dart';
 
 class BodyLogInScreen extends StatelessWidget {
@@ -145,42 +146,139 @@ class BodyLogInScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          width: 500,
-                          height: 50,
-                          child: ElevatedButton(
-                              child: Container(
-                                child: Text("LOGIN",
-                                    style: TextStyle(fontSize: 14)),
+                            width: 500,
+                            height: 490,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20),
+                                topRight: Radius.circular(20),
+                                bottomLeft: Radius.circular(20),
+                                bottomRight: Radius.circular(20),
                               ),
-                              style: ButtonStyle(
-                                  foregroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.white),
-                                  backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.blueGrey),
-                                  shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ))),
-                              onPressed: () async {
-                                print(screenWidth);
+                              gradient: LinearGradient(
+                                  begin: Alignment(0.750751793384552, 0.2652396559715271),
+                                  end: Alignment(-0.2652396559715271, 0.26902517676353455),
+                                  colors: [
+                                    Color.fromARGB(108, 239, 239, 239),
+                                    Color.fromRGBO(196, 196, 196, 0.10000000149011612)
+                                  ]),
+                            ),
+                            child: Container(
+                              height: screenWidth > telaTocaDeLayout ? 400 : 300,
+                              width: screenWidth > telaTocaDeLayout ? 310 : 240,
+                              child: Form(
+                                key: formKeyAuthentication,
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Text(
+                                      'Cadastro',
+                                      style: TextStyle(
+                                        letterSpacing: 0,
+                                        color: Color.fromARGB(221, 255, 255, 255),
+                                        fontFamily: 'Iceland',
+                                        height: 1,
+                                        fontSize: 28,
+                                      ),
+                                    ),
+                                    Divider(
+                                      color: Color.fromRGBO(255, 255, 255, 1),
+                                      height: 5,
+                                      thickness: 1,
+                                      indent: 1,
+                                      endIndent: 1,
+                                    ),
+                                    Text(
+                                      'Bem-Vindo a Plataforma do Conquistando o Mundo!',
+                                      textAlign: TextAlign.left,
+                                      style: TextStyle(
+                                          color: Color.fromARGB(230, 255, 255, 255),
+                                          fontFamily: 'Ubuntu',
+                                          fontSize: screenWidth > telaTocaDeLayout ? 16 : 14,
+                                          height: -0.3),
+                                    ),
+                                    Container(
+                                      width: 400,
+                                      height: 60,
+                                      child: TextFormField(
+                                        validator: (emailController) =>
+                                        !EmailValidator.validate(emailController!)
+                                            ? 'Digite um email válido'
+                                            : null,
+                                        controller: emailController,
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(
+                                              borderRadius: BorderRadius.circular(14.0),
+                                            ),
+                                            filled: true,
+                                            hintStyle: TextStyle(
+                                                color: Colors.grey[400], fontSize: 14),
+                                            hintText: "Email",
+                                            fillColor: Color.fromARGB(166, 142, 139, 139)),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 400,
+                                      height: 60,
+                                      child: TextFormField(
+                                        obscureText: true,
+                                        controller: passwordController,
+                                        validator: (passwordController) {
+                                          if (passwordController!.isEmpty ||
+                                              !RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')
+                                                  .hasMatch(passwordController)) {
+                                            return "Sua senha deve conter letras minúsculas,maiúsculas e números";
+                                          } else {
+                                            return null;
+                                          }
+                                        },
+                                        decoration: InputDecoration(
+                                            border: OutlineInputBorder(
+                                              borderRadius: BorderRadius.circular(14.0),
+                                            ),
+                                            filled: true,
+                                            hintStyle: TextStyle(
+                                                color: Colors.grey[400], fontSize: 14),
+                                            hintText: "Senha",
+                                            fillColor: Color.fromARGB(166, 142, 139, 139)),
+                                      ),
+                                    ),
+                                    Container(
+                                      width: 390,
+                                      height: 40,
+                                      child: ElevatedButton(
+                                          child: Text("Cadastrar".toUpperCase(),
+                                              style: TextStyle(fontSize: 14)),
+                                          style: ButtonStyle(
+                                              foregroundColor: MaterialStateProperty.all<Color>(
+                                                  Color.fromARGB(255, 32, 31, 31)),
+                                              backgroundColor:
+                                              MaterialStateProperty.all<Color>(
+                                                  Color.fromARGB(255, 165, 217, 208)),
+                                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                                  RoundedRectangleBorder(
+                                                      borderRadius:
+                                                      BorderRadius.circular(10.0),
+                                                      side: BorderSide(
+                                                          color:
+                                                          Color.fromARGB(255, 165, 217, 208))))),
+                                          onPressed: () async {
+                                            final form = formKeyAuthentication.currentState!;
+                                            if (form.validate()) {
 
-                                final form =
-                                    formKeyAuthentication.currentState!;
-                                if (form.validate()) {
-                                  print('aaaaaaaaaaaaaa');
+                                              await AuthServiceCadasto().loginUser(
+                                                  emailController.text,
+                                                  passwordController.text);
 
-                                  await AuthServiceLogIn().loginUser(
-                                      emailController.text,
-                                      passwordController.text);
-
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                      builder: (context) => ViewDashBoard()));
-                                }
-                              }),
-                        ),
+                                              Navigator.of(context).push(MaterialPageRoute(
+                                                  builder: (context) => ViewDashBoard()));
+                                            }
+                                          }),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )),
                       ],
                     ),
                   ),

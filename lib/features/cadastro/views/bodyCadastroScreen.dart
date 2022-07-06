@@ -16,6 +16,7 @@ class BodyCadastroScreen extends StatelessWidget {
     var screenWidthPixel = MediaQuery.of(context).size.width;
     final emailController = TextEditingController();
     final passwordController = TextEditingController();
+    final double telaTocaDeLayout = 1020.0;
     final verificaPasswordController = TextEditingController();
     final formKeyAuthentication = GlobalKey<FormState>();
     return Container(
@@ -27,10 +28,8 @@ class BodyCadastroScreen extends StatelessWidget {
             fit: BoxFit.cover),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SizedBox(
-            width: screenWidth * .1,
-          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,9 +39,7 @@ class BodyCadastroScreen extends StatelessWidget {
                 style: TextStyle(
                     color: Color.fromRGBO(255, 255, 255, 1),
                     fontFamily: 'Ubuntu',
-                    fontSize: 35,
-                    letterSpacing:
-                        0 /*percentages not used in flutter. defaulting to zero*/,
+                    fontSize: screenWidthPixel > telaTocaDeLayout ? 35 : 28,
                     fontWeight: FontWeight.bold,
                     height: 1),
               ),
@@ -54,16 +51,13 @@ class BodyCadastroScreen extends StatelessWidget {
                 style: TextStyle(
                   fontFamily: 'Ubuntu',
                   color: Colors.white,
-                  fontSize: 22,
+                  fontSize: screenWidthPixel > telaTocaDeLayout ? 20 : 16,
                 ),
               ),
               SizedBox(
                 height: 150,
               ),
             ],
-          ),
-          SizedBox(
-            width: screenWidth * .25,
           ),
           Container(
               width: 500,
@@ -84,8 +78,8 @@ class BodyCadastroScreen extends StatelessWidget {
                     ]),
               ),
               child: Container(
-                height: screenWidth > 1200 ? 400 : 300,
-                width: screenWidth > 1200 ? 310 : 240,
+                height: screenWidth > telaTocaDeLayout ? 400 : 300,
+                width: screenWidth > telaTocaDeLayout ? 310 : 240,
                 child: Form(
                   key: formKeyAuthentication,
                   child: Column(
@@ -114,7 +108,7 @@ class BodyCadastroScreen extends StatelessWidget {
                         style: TextStyle(
                             color: Color.fromARGB(230, 255, 255, 255),
                             fontFamily: 'Ubuntu',
-                            fontSize: 14,
+                            fontSize: screenWidth > telaTocaDeLayout ? 16 : 14,
                             height: -0.3),
                       ),
                       Container(
