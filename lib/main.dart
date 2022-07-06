@@ -6,6 +6,7 @@ import 'package:conquistandoomundo/features/dashboardAulas/views/aulasMainPage.d
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'features/LogInScreen/viewLogInScreen.dart';
+import 'features/LogInScreen/views/bodyLogInScreen.dart';
 import 'features/dashBoard/viewDashBoard.dart';
 import 'features/pergunta1/viewPergunta1.dart';
 import 'firebase_options.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
               if (snapshot.hasData) {
                 return ViewDashBoard();
               }
-              return ViewCadastroScreen();
+              return ViewAulas();
             }));
   }
 }

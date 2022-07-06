@@ -27,7 +27,7 @@ class ViewDashBoard extends StatelessWidget {
                 SizedBox(
                   width: 10,
                 ),
-                Image.asset("assets/imgLogo.png"),
+                Image.asset("/imgLogo.png"),
                 SizedBox(
                   width: 50,
                 ),
@@ -41,6 +41,19 @@ class ViewDashBoard extends StatelessWidget {
                         getColor() == 'Dashboard' ? Colors.blue : Colors.grey,
                   ),
                   onPressed: () {},
+                ),
+                FloatingActionButton.extended(
+                  label: Text('Calendario'), // <-- Text
+                  backgroundColor: Colors.transparent,
+                  icon: Icon(
+                    Icons.calendar_today,
+                    size: 36.0,
+                    color:
+                        getColor() == 'Calendario' ? Colors.blue : Colors.grey,
+                  ),
+                  onPressed: () {
+                    color = 'Calendario';
+                  },
                 ),
                 FloatingActionButton.extended(
                   label: Text('Calendario'), // <-- Text
@@ -82,7 +95,7 @@ class ViewDashBoard extends StatelessWidget {
                 SizedBox(
                   width: 200,
                 ),
-                Image.asset("assets/imgLogo.png"),
+                Image.asset("/imgLogo.png"),
                 SizedBox(
                   width: 10,
                 ),
@@ -92,7 +105,8 @@ class ViewDashBoard extends StatelessWidget {
         ],
         toolbarHeight: 70,
       ),
-      body: DashBoardBody(),
+
+      //body:DashBoardBody(),
     );
   }
 
