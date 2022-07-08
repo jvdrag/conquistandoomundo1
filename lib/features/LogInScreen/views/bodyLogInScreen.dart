@@ -156,26 +156,32 @@ class BodyLogInScreen extends StatelessWidget {
                                 bottomRight: Radius.circular(20),
                               ),
                               gradient: LinearGradient(
-                                  begin: Alignment(0.750751793384552, 0.2652396559715271),
-                                  end: Alignment(-0.2652396559715271, 0.26902517676353455),
+                                  begin: Alignment(
+                                      0.750751793384552, 0.2652396559715271),
+                                  end: Alignment(
+                                      -0.2652396559715271, 0.26902517676353455),
                                   colors: [
                                     Color.fromARGB(108, 239, 239, 239),
-                                    Color.fromRGBO(196, 196, 196, 0.10000000149011612)
+                                    Color.fromRGBO(
+                                        196, 196, 196, 0.10000000149011612)
                                   ]),
                             ),
                             child: Container(
-                              height: screenWidth > telaTocaDeLayout ? 400 : 300,
+                              height:
+                                  screenWidth > telaTocaDeLayout ? 400 : 300,
                               width: screenWidth > telaTocaDeLayout ? 310 : 240,
                               child: Form(
                                 key: formKeyAuthentication,
                                 child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Text(
                                       'Cadastro',
                                       style: TextStyle(
                                         letterSpacing: 0,
-                                        color: Color.fromARGB(221, 255, 255, 255),
+                                        color:
+                                            Color.fromARGB(221, 255, 255, 255),
                                         fontFamily: 'Iceland',
                                         height: 1,
                                         fontSize: 28,
@@ -192,9 +198,13 @@ class BodyLogInScreen extends StatelessWidget {
                                       'Bem-Vindo a Plataforma do Conquistando o Mundo!',
                                       textAlign: TextAlign.left,
                                       style: TextStyle(
-                                          color: Color.fromARGB(230, 255, 255, 255),
+                                          color: Color.fromARGB(
+                                              230, 255, 255, 255),
                                           fontFamily: 'Ubuntu',
-                                          fontSize: screenWidth > telaTocaDeLayout ? 16 : 14,
+                                          fontSize:
+                                              screenWidth > telaTocaDeLayout
+                                                  ? 16
+                                                  : 14,
                                           height: -0.3),
                                     ),
                                     Container(
@@ -202,19 +212,23 @@ class BodyLogInScreen extends StatelessWidget {
                                       height: 60,
                                       child: TextFormField(
                                         validator: (emailController) =>
-                                        !EmailValidator.validate(emailController!)
-                                            ? 'Digite um email válido'
-                                            : null,
+                                            !EmailValidator.validate(
+                                                    emailController!)
+                                                ? 'Digite um email válido'
+                                                : null,
                                         controller: emailController,
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(
-                                              borderRadius: BorderRadius.circular(14.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(14.0),
                                             ),
                                             filled: true,
                                             hintStyle: TextStyle(
-                                                color: Colors.grey[400], fontSize: 14),
+                                                color: Colors.grey[400],
+                                                fontSize: 14),
                                             hintText: "Email",
-                                            fillColor: Color.fromARGB(166, 142, 139, 139)),
+                                            fillColor: Color.fromARGB(
+                                                166, 142, 139, 139)),
                                       ),
                                     ),
                                     Container(
@@ -226,7 +240,8 @@ class BodyLogInScreen extends StatelessWidget {
                                         validator: (passwordController) {
                                           if (passwordController!.isEmpty ||
                                               !RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$')
-                                                  .hasMatch(passwordController)) {
+                                                  .hasMatch(
+                                                      passwordController)) {
                                             return "Sua senha deve conter letras minúsculas,maiúsculas e números";
                                           } else {
                                             return null;
@@ -234,13 +249,16 @@ class BodyLogInScreen extends StatelessWidget {
                                         },
                                         decoration: InputDecoration(
                                             border: OutlineInputBorder(
-                                              borderRadius: BorderRadius.circular(14.0),
+                                              borderRadius:
+                                                  BorderRadius.circular(14.0),
                                             ),
                                             filled: true,
                                             hintStyle: TextStyle(
-                                                color: Colors.grey[400], fontSize: 14),
+                                                color: Colors.grey[400],
+                                                fontSize: 14),
                                             hintText: "Senha",
-                                            fillColor: Color.fromARGB(166, 142, 139, 139)),
+                                            fillColor: Color.fromARGB(
+                                                166, 142, 139, 139)),
                                       ),
                                     ),
                                     Container(
@@ -250,28 +268,28 @@ class BodyLogInScreen extends StatelessWidget {
                                           child: Text("Cadastrar".toUpperCase(),
                                               style: TextStyle(fontSize: 14)),
                                           style: ButtonStyle(
-                                              foregroundColor: MaterialStateProperty.all<Color>(
-                                                  Color.fromARGB(255, 32, 31, 31)),
-                                              backgroundColor:
-                                              MaterialStateProperty.all<Color>(
-                                                  Color.fromARGB(255, 165, 217, 208)),
+                                              foregroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(
+                                                  255, 32, 31, 31)),
+                                              backgroundColor: MaterialStateProperty.all<Color>(
+                                                  Color.fromARGB(
+                                                      255, 165, 217, 208)),
                                               shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                                   RoundedRectangleBorder(
-                                                      borderRadius:
-                                                      BorderRadius.circular(10.0),
-                                                      side: BorderSide(
-                                                          color:
-                                                          Color.fromARGB(255, 165, 217, 208))))),
+                                                      borderRadius: BorderRadius.circular(10.0),
+                                                      side: BorderSide(color: Color.fromARGB(255, 165, 217, 208))))),
                                           onPressed: () async {
-                                            final form = formKeyAuthentication.currentState!;
+                                            final form = formKeyAuthentication
+                                                .currentState!;
                                             if (form.validate()) {
+                                              await AuthServiceCadasto()
+                                                  .loginUser(
+                                                      emailController.text,
+                                                      passwordController.text);
 
-                                              await AuthServiceCadasto().loginUser(
-                                                  emailController.text,
-                                                  passwordController.text);
-
-                                              Navigator.of(context).push(MaterialPageRoute(
-                                                  builder: (context) => ViewDashBoard()));
+                                              Navigator.of(context).push(
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          ViewDashBoard()));
                                             }
                                           }),
                                     )

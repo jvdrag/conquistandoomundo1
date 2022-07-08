@@ -135,7 +135,7 @@ class AulasMainPage extends StatelessWidget {
                   width: screenWidth < telaTocaDeLayout ? 135 : 150,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/Mdulo52.png'),
+                      image: AssetImage('/Mdulo52.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -151,7 +151,7 @@ class AulasMainPage extends StatelessWidget {
                   width: screenWidth < telaTocaDeLayout ? 135 : 150,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/Mdulo62.png'),
+                      image: AssetImage('/Mdulo62.png'),
                       fit: BoxFit.cover,
                     ),
                   ),

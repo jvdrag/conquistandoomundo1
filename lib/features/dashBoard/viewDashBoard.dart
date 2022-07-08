@@ -1,4 +1,5 @@
 import 'package:conquistandoomundo/features/dashBoard/views/dashBoardBody.dart';
+import 'package:conquistandoomundo/features/dashboardAulas/viewAulas.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,7 @@ class ViewDashBoard extends StatelessWidget {
     TrocarCorDashboardHeader trocarCorDashboardHeaderAulas = TrocarCorDashboardHeader(color: 'Aulas');
 */
     return Scaffold(
+      body: ViewAulas(),
       appBar: AppBar(
         backgroundColor: Color(0xff0B1423),
         actions: [
@@ -27,7 +29,7 @@ class ViewDashBoard extends StatelessWidget {
                 SizedBox(
                   width: 10,
                 ),
-                Image.asset("/imgLogo.png"),
+                Image.asset("assets/imgLogo.png"),
                 SizedBox(
                   width: 50,
                 ),
@@ -41,19 +43,6 @@ class ViewDashBoard extends StatelessWidget {
                         getColor() == 'Dashboard' ? Colors.blue : Colors.grey,
                   ),
                   onPressed: () {},
-                ),
-                FloatingActionButton.extended(
-                  label: Text('Calendario'), // <-- Text
-                  backgroundColor: Colors.transparent,
-                  icon: Icon(
-                    Icons.calendar_today,
-                    size: 36.0,
-                    color:
-                        getColor() == 'Calendario' ? Colors.blue : Colors.grey,
-                  ),
-                  onPressed: () {
-                    color = 'Calendario';
-                  },
                 ),
                 FloatingActionButton.extended(
                   label: Text('Calendario'), // <-- Text
@@ -95,7 +84,7 @@ class ViewDashBoard extends StatelessWidget {
                 SizedBox(
                   width: 200,
                 ),
-                Image.asset("/imgLogo.png"),
+                Image.asset("assets/imgLogo.png"),
                 SizedBox(
                   width: 10,
                 ),
