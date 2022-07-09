@@ -47,7 +47,6 @@ class _YoutubeAppDemoState extends State<VideosAulasDemo> {
           '7QUtEmBT_-w',
           '34_PXCzGw1M',
         ],
-        startAt: const Duration(minutes: 1, seconds: 36),
         showControls: true,
         showFullscreenButton: true,
         desktopMode: false,
@@ -82,7 +81,7 @@ class _YoutubeAppDemoState extends State<VideosAulasDemo> {
                 children: [
                   const Expanded(child: player),
                   const SizedBox(
-                    width: 500,
+                    width: 180,
                     child: SingleChildScrollView(),
                   ),
                 ],
