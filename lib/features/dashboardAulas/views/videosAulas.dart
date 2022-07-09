@@ -72,6 +72,7 @@ class _YoutubeAppDemoState extends State<VideosAulasDemo> {
     return YoutubePlayerControllerProvider(
       // Passing controller to widgets below.
       controller: _controller,
+
       child: Scaffold(
         body: LayoutBuilder(
           builder: (context, constraints) {
