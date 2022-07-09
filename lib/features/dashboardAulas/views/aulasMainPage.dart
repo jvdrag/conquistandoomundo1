@@ -55,22 +55,6 @@ class AulasMainPage extends StatelessWidget {
                   width: screenWidth < telaTocaDeLayout ? 135 : 150,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/Course_thumbnails.png'),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Material(
-              child: InkWell(
-                onTap: () {}, // Handle your callback.
-                splashColor: Color.fromARGB(255, 5, 82, 236).withOpacity(0.5),
-                child: Ink(
-                  height: screenWidth < telaTocaDeLayout ? 180 : 197,
-                  width: screenWidth < telaTocaDeLayout ? 135 : 150,
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
                       image: AssetImage('assets/Mdulo11.png'),
                       fit: BoxFit.cover,
                     ),
@@ -135,7 +119,7 @@ class AulasMainPage extends StatelessWidget {
                   width: screenWidth < telaTocaDeLayout ? 135 : 150,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('/Mdulo52.png'),
+                      image: AssetImage('assets/Mdulo52.png'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -151,7 +135,23 @@ class AulasMainPage extends StatelessWidget {
                   width: screenWidth < telaTocaDeLayout ? 135 : 150,
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('/Mdulo62.png'),
+                      image: AssetImage('assets/Mdulo62.png'),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Material(
+              child: InkWell(
+                onTap: () {}, // Handle your callback.
+                splashColor: Color.fromARGB(255, 5, 82, 236).withOpacity(0.5),
+                child: Ink(
+                  height: screenWidth < telaTocaDeLayout ? 180 : 197,
+                  width: screenWidth < telaTocaDeLayout ? 135 : 150,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('assets/123.png'),
                       fit: BoxFit.cover,
                     ),
                   ),

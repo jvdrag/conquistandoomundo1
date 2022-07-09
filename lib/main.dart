@@ -2,6 +2,7 @@ import 'package:conquistandoomundo/features/bemVindoScreen/viewBemVindo.dart';
 import 'package:conquistandoomundo/features/cadastro/fireBaseAuthCadastroScreen.dart';
 import 'package:conquistandoomundo/features/cadastro/viewCadastroScreen.dart';
 import 'package:conquistandoomundo/features/dashboardAulas/viewAulas.dart';
+import 'package:conquistandoomundo/features/dashboardAulas/views/VideosAulas.dart';
 import 'package:conquistandoomundo/features/dashboardAulas/views/aulasMainPage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ import 'features/LogInScreen/views/bodyLogInScreen.dart';
 import 'features/dashBoard/viewDashBoard.dart';
 import 'features/pergunta1/viewPergunta1.dart';
 import 'firebase_options.dart';
+import 'package:conquistandoomundo/features/dashboardAulas/views/VideosAulas.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
