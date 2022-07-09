@@ -1,105 +1,144 @@
-import 'dart:async';
+import 'dart:developer';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
+import 'package:flutter/services.dart';
+import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
-void main() => runApp(const VideosAulas());
-
+///
 class VideosAulas extends StatelessWidget {
-  const VideosAulas({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Video Player Demo',
-      home: VideoPlayerScreen(),
+    return MaterialApp(
+      title: 'Youtube Player IFrame Demo',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.deepPurple,
+        scaffoldBackgroundColor: Color.fromARGB(255, 11, 20, 35),
+      ),
+      debugShowCheckedModeBanner: false,
+      home: VideosAulasDemo(),
     );
   }
 }
 
-class VideoPlayerScreen extends StatefulWidget {
-  const VideoPlayerScreen({super.key});
-
+///
+class VideosAulasDemo extends StatefulWidget {
   @override
-  State<VideoPlayerScreen> createState() => _VideoPlayerScreenState();
+  _YoutubeAppDemoState createState() => _YoutubeAppDemoState();
 }
 
-class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
-  late VideoPlayerController _controller;
-  late Future<void> _initializeVideoPlayerFuture;
+class _YoutubeAppDemoState extends State<VideosAulasDemo> {
+  late YoutubePlayerController _controller;
 
   @override
   void initState() {
     super.initState();
-
-    // Create and store the VideoPlayerController. The VideoPlayerController
-    // offers several different constructors to play videos from assets, files,
-    // or the internet.
-    _controller = VideoPlayerController.network(
-      'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+    _controller = YoutubePlayerController(
+      initialVideoId: 'tcodrIK2P_I',
+      params: const YoutubePlayerParams(
+        playlist: [
+          'nPt8bK2gbaU',
+          'K18cpp_-gP8',
+          'iLnmTe5Q2Qw',
+          '_WoCV4c6XOE',
+          'KmzdUe0RSJo',
+          '6jZDSSZZxjQ',
+          'p2lYr3vM_1w',
+          '7QUtEmBT_-w',
+          '34_PXCzGw1M',
+        ],
+        startAt: const Duration(minutes: 1, seconds: 36),
+        showControls: true,
+        showFullscreenButton: true,
+        desktopMode: false,
+        privacyEnhanced: true,
+        useHybridComposition: true,
+      ),
     );
-
-    // Initialize the controller and store the Future for later use.
-    _initializeVideoPlayerFuture = _controller.initialize();
-
-    // Use the controller to loop the video.
-    _controller.setLooping(true);
-  }
-
-  @override
-  void dispose() {
-    // Ensure disposing of the VideoPlayerController to free up resources.
-    _controller.dispose();
-
-    super.dispose();
+    _controller.onEnterFullscreen = () {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight,
+      ]);
+      log('Entered Fullscreen');
+    };
+    _controller.onExitFullscreen = () {
+      log('Exited Fullscreen');
+    };
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Butterfly Video'),
-      ),
-      // Use a FutureBuilder to display a loading spinner while waiting for the
-      // VideoPlayerController to finish initializing.
-      body: FutureBuilder(
-        future: _initializeVideoPlayerFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            // If the VideoPlayerController has finished initialization, use
-            // the data it provides to limit the aspect ratio of the video.
-            return AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              // Use the VideoPlayer widget to display the video.
-              child: VideoPlayer(_controller),
-            );
-          } else {
-            // If the VideoPlayerController is still initializing, show a
-            // loading spinner.
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Wrap the play or pause in a call to `setState`. This ensures the
-          // correct icon is shown.
-          setState(() {
-            // If the video is playing, pause it.
-            if (_controller.value.isPlaying) {
-              _controller.pause();
-            } else {
-              // If the video is paused, play it.
-              _controller.play();
+    const player = YoutubePlayerIFrame();
+    return YoutubePlayerControllerProvider(
+      // Passing controller to widgets below.
+      controller: _controller,
+      child: Scaffold(
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            if (kIsWeb && constraints.maxWidth > 800) {
+              return Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Expanded(child: player),
+                  const SizedBox(
+                    width: 500,
+                    child: SingleChildScrollView(),
+                  ),
+                ],
+              );
             }
-          });
-        },
-        // Display the correct icon depending on the state of the player.
-        child: Icon(
-          _controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+            return ListView(
+              children: [
+                Stack(
+                  children: [
+                    player,
+                    Positioned.fill(
+                      child: YoutubeValueBuilder(
+                        controller: _controller,
+                        builder: (context, value) {
+                          return AnimatedCrossFade(
+                            firstChild: const SizedBox.shrink(),
+                            secondChild: Material(
+                              child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: NetworkImage(
+                                      YoutubePlayerController.getThumbnail(
+                                        videoId:
+                                            _controller.params.playlist.first,
+                                        quality: ThumbnailQuality.medium,
+                                      ),
+                                    ),
+                                    fit: BoxFit.fitWidth,
+                                  ),
+                                ),
+                                child: const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                              ),
+                            ),
+                            crossFadeState: value.isReady
+                                ? CrossFadeState.showFirst
+                                : CrossFadeState.showSecond,
+                            duration: const Duration(milliseconds: 300),
+                          );
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.close();
+    super.dispose();
   }
 }
