@@ -9,8 +9,7 @@ class ViewLogInScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.of(context).size.width;
 
-    return Scaffold(
-
+    return const Scaffold(
       body: BodyLogInScreen(),
     );
   }

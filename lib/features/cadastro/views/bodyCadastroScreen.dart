@@ -1,3 +1,4 @@
+import 'package:conquistandoomundo/features/LogInScreen/viewLogInScreen.dart';
 import 'package:conquistandoomundo/features/dashBoard/viewDashBoard.dart';
 import 'package:conquistandoomundo/features/dashboardAulas/viewAulas.dart';
 import 'package:flutter/cupertino.dart';
@@ -208,7 +209,15 @@ class BodyCadastroScreen extends StatelessWidget {
                                     builder: (context) => ViewDashBoard()));
                               }
                             }),
-                      )
+                      ),
+                      TextButton(
+                          child: Text("Já possui uma conta?".toUpperCase(),
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.white)),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => const ViewLogInScreen()));
+                          }),
                     ],
                   ),
                 ),
