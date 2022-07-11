@@ -3,6 +3,8 @@ import 'package:conquistandoomundo/features/dashboardAulas/viewVideosAulas.dart'
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../cadastro/fireBaseAuthCadastroScreen.dart';
+
 class barzin extends StatelessWidget implements PreferredSizeWidget {
   String color = 'kk';
 
@@ -66,11 +68,18 @@ class barzin extends StatelessWidget implements PreferredSizeWidget {
                 },
               ),
               SizedBox(
-                width: 200,
+                width: 100,
               ),
-              Image.asset("assets/imgLogo.png"),
-              SizedBox(
-                width: 10,
+              FloatingActionButton.extended(
+                onPressed: () async {
+                  await AuthServiceCadasto().signOut();
+                },
+                label: Text('Deslogar'),
+                backgroundColor: Colors.transparent,
+                icon: Icon(
+                  Icons.login,
+                  size: 36.0,
+                ),
               ),
             ],
           ),

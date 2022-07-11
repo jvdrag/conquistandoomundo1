@@ -20,6 +20,14 @@ class AuthServiceCadasto {
     }
   }
 
+  Future<void> resetPassword(String email) async {
+    await firebaseAuth.sendPasswordResetEmail(email: email);
+  }
+
+  Future<void> signOut() async {
+    await firebaseAuth.signOut();
+  }
+
   Future<User?> loginUser(String email, String password) async {
     try {
       UserCredential userCredential = await FirebaseAuth.instance
