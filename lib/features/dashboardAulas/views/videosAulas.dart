@@ -234,10 +234,6 @@ class _YoutubeAppDemoState extends State<VideosAulasDemo> {
 }
 
 ///
-<<<<<<< HEAD
-=======
-
->>>>>>> dcb9dbfcb03ac572c47876588e51f17b818c33d0
 class VideosAulasDemo2 extends StatefulWidget {
   @override
   _YoutubeAppDemoState2 createState() => _YoutubeAppDemoState2();
@@ -370,7 +366,6 @@ class _YoutubeAppDemoState2 extends State<VideosAulasDemo2> {
     super.dispose();
   }
 }
-<<<<<<< HEAD
 
 ///
 class VideosAulasDemo3 extends StatefulWidget {
@@ -1057,6 +1052,3 @@ class _YoutubeAppDemoState7 extends State<VideosAulasDemo7> {
     super.dispose();
   }
 }
-=======
-///
->>>>>>> dcb9dbfcb03ac572c47876588e51f17b818c33d0
