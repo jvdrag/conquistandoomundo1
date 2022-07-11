@@ -89,7 +89,10 @@ class AulasMainPage extends StatelessWidget {
             ),
             Material(
               child: InkWell(
-                onTap: () {}, // Handle your callback.
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => aulas3()));
+                }, // Handle your callback.
                 splashColor: Color.fromARGB(255, 5, 82, 236).withOpacity(0.5),
                 child: Ink(
                   height: screenWidth < telaTocaDeLayout ? 180 : 197,
@@ -105,7 +108,10 @@ class AulasMainPage extends StatelessWidget {
             ),
             Material(
               child: InkWell(
-                onTap: () {}, // Handle your callback.
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => aulas4()));
+                }, // Handle your callback.
                 splashColor: Color.fromARGB(255, 5, 82, 236).withOpacity(0.5),
                 child: Ink(
                   height: screenWidth < telaTocaDeLayout ? 180 : 197,
@@ -121,7 +127,10 @@ class AulasMainPage extends StatelessWidget {
             ),
             Material(
               child: InkWell(
-                onTap: () {}, // Handle your callback.
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => aulas5()));
+                }, // Handle your callback.
                 splashColor: Color.fromARGB(255, 5, 82, 236).withOpacity(0.5),
                 child: Ink(
                   height: screenWidth < telaTocaDeLayout ? 180 : 197,
@@ -137,7 +146,10 @@ class AulasMainPage extends StatelessWidget {
             ),
             Material(
               child: InkWell(
-                onTap: () {}, // Handle your callback.
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => aulas6()));
+                }, // Handle your callback.
                 splashColor: Color.fromARGB(255, 5, 82, 236).withOpacity(0.5),
                 child: Ink(
                   height: screenWidth < telaTocaDeLayout ? 180 : 197,
@@ -153,7 +165,10 @@ class AulasMainPage extends StatelessWidget {
             ),
             Material(
               child: InkWell(
-                onTap: () {}, // Handle your callback.
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => aulas7()));
+                }, // Handle your callback.
                 splashColor: Color.fromARGB(255, 5, 82, 236).withOpacity(0.5),
                 child: Ink(
                   height: screenWidth < telaTocaDeLayout ? 180 : 197,
