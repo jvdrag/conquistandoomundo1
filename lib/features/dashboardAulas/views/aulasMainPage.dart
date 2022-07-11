@@ -1,5 +1,8 @@
+import 'package:conquistandoomundo/features/dashboardAulas/viewVideosAulas.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../../dashBoard/viewDashBoard.dart';
 
 class AulasMainPage extends StatelessWidget {
   const AulasMainPage({Key? key}) : super(key: key);
@@ -48,7 +51,10 @@ class AulasMainPage extends StatelessWidget {
             ),
             Material(
               child: InkWell(
-                onTap: () {}, // Handle your callback.
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => aulas1()));
+                }, // Handle your callback.
                 splashColor: Color.fromARGB(255, 5, 82, 236).withOpacity(0.5),
                 child: Ink(
                   height: screenWidth < telaTocaDeLayout ? 180 : 197,
@@ -64,7 +70,10 @@ class AulasMainPage extends StatelessWidget {
             ),
             Material(
               child: InkWell(
-                onTap: () {}, // Handle your callback.
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => aulas2()));
+                }, // Handle your callback.
                 splashColor: Color.fromARGB(255, 5, 82, 236).withOpacity(0.5),
                 child: Ink(
                   height: screenWidth < telaTocaDeLayout ? 180 : 197,

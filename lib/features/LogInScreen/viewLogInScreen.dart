@@ -11,6 +11,7 @@ class ViewLogInScreen extends StatelessWidget {
 
     return const Scaffold(
       body: BodyLogInScreen(),
+      backgroundColor: Color.fromARGB(255, 38, 34, 34),
     );
   }
 }

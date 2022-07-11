@@ -204,9 +204,6 @@ class BodyCadastroScreen extends StatelessWidget {
                                 await AuthServiceCadasto().registerUser(
                                     emailController.text,
                                     passwordController.text);
-
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => ViewDashBoard()));
                               }
                             }),
                       ),
