@@ -172,8 +172,6 @@ class BodyLogInScreen extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(10.0),
                                   ))),
                               onPressed: () async {
-                                print(screenWidth);
-
                                 final form =
                                     formKeyAuthentication.currentState!;
                                 if (form.validate()) {
