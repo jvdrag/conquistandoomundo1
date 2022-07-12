@@ -1,6 +1,7 @@
 import 'package:conquistandoomundo/features/cadastro/fireBaseAuthCadastroScreen.dart';
 import 'package:conquistandoomundo/features/cadastro/viewCadastroScreen.dart';
 import 'package:conquistandoomundo/features/dashBoard/viewDashBoard.dart';
+import 'package:conquistandoomundo/features/dashboardAulas/viewAulas.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
