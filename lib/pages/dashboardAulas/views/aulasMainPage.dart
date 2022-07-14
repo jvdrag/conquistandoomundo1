@@ -1,10 +1,7 @@
-import 'package:conquistandoomundo/features/dashboardAulas/viewVideosAulas.dart';
+import 'package:conquistandoomundo/pages/dashboardAulas/viewVideosAulas.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:conquistandoomundo/features/cadastro/fireBaseAuthCadastroScreen.dart';
 import 'package:email_validator/email_validator.dart';
-import 'package:conquistandoomundo/features/cadastro/viewCadastroScreen.dart';
-
 import '../../dashBoard/viewDashBoard.dart';
 
 class AulasMainPage extends StatelessWidget {

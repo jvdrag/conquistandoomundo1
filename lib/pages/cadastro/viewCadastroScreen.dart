@@ -1,5 +1,4 @@
-import 'package:conquistandoomundo/features/cadastro/views/bodyCadastroScreen.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:conquistandoomundo/pages/cadastro/views/bodyCadastroScreen.dart';
 import 'package:flutter/material.dart';
 
 class ViewCadastroScreen extends StatelessWidget {

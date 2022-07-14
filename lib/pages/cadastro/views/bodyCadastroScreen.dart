@@ -1,10 +1,6 @@
-import 'package:conquistandoomundo/features/LogInScreen/viewLogInScreen.dart';
-import 'package:conquistandoomundo/features/dashBoard/viewDashBoard.dart';
-import 'package:conquistandoomundo/features/dashboardAulas/viewAulas.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:conquistandoomundo/pages/LogInScreen/viewLogInScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import '../../bemVindoScreen/viewBemVindo.dart';
 import '../fireBaseAuthCadastroScreen.dart';
 
 class BodyCadastroScreen extends StatelessWidget {

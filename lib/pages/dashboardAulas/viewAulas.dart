@@ -1,4 +1,4 @@
-import 'package:conquistandoomundo/features/dashboardAulas/views/aulasMainPage.dart';
+import 'package:conquistandoomundo/pages/dashboardAulas/views/aulasMainPage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

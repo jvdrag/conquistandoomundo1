@@ -1,12 +1,6 @@
-import 'package:conquistandoomundo/features/dashBoard/views/dashBoardBody.dart';
-import 'package:conquistandoomundo/features/dashboardAulas/viewAulas.dart';
-import 'package:conquistandoomundo/features/dashboardAulas/views/appbar.dart';
-import 'package:conquistandoomundo/features/dashboardAulas/views/videosAulas.dart';
-
-import 'package:flutter/cupertino.dart';
+import 'package:conquistandoomundo/pages/dashboardAulas/viewAulas.dart';
+import 'package:conquistandoomundo/pages/dashboardAulas/views/appbar.dart';
 import 'package:flutter/material.dart';
-
-import '../../util/trocarCorDashboardHeader.dart';
 
 class ViewDashBoard extends StatelessWidget {
   String color = 'kk';

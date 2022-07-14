@@ -1,4 +1,4 @@
-import 'package:conquistandoomundo/features/LogInScreen/views/bodyLogInScreen.dart';
+import 'package:conquistandoomundo/pages/LogInScreen/views/bodyLogInScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
