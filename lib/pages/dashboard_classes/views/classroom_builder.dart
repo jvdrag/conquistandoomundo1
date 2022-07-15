@@ -1,6 +1,5 @@
-import 'package:conquistandoomundo/pages/dashboardAulas/views/header.dart';
-import 'package:conquistandoomundo/pages/dashboardAulas/views/youtube_player.dart';
-
+import 'package:conquistandoomundo/pages/dashboard_classes/views/header.dart';
+import 'package:conquistandoomundo/pages/dashboard_classes/views/youtube_player.dart';
 import 'package:flutter/material.dart';
 
 Widget ClasroomBuilder(List<String> ids) {

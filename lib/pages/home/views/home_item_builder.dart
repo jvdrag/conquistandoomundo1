@@ -1,4 +1,4 @@
-import 'package:conquistandoomundo/pages/dashboardAulas/views/classroom_builder.dart';
+import 'package:conquistandoomundo/pages/dashboard_classes/dashboard_classes_view.dart';
 import 'package:conquistandoomundo/util/navigation.dart';
 import 'package:conquistandoomundo/util/style.dart';
 import 'package:flutter/material.dart';
@@ -10,7 +10,7 @@ Widget HomeItemBuilder(BuildContext context, List<String> ids, String image) {
     child: InkWell(
       onTap: () {
         Navigation.to(context,
-            MaterialPageRoute(builder: (context) => ClasroomBuilder(ids)));
+            MaterialPageRoute(builder: (context) => DashboardClasses(ids)));
       }, // Handle your callback.
       splashColor: AppColors().colorOnHold,
       child: Ink(
