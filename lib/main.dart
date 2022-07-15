@@ -1,6 +1,7 @@
 import 'package:conquistandoomundo/pages/LogInScreen/viewLogInScreen.dart';
 import 'package:conquistandoomundo/pages/cadastro/fireBaseAuthCadastroScreen.dart';
 import 'package:conquistandoomundo/pages/dashBoard/viewDashBoard.dart';
+import 'package:conquistandoomundo/pages/dashboardAulas/dashboard_view.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'firebase_options.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
             stream: AuthServiceCadasto().firebaseAuth.authStateChanges(),
             builder: (context, AsyncSnapshot snapshot) {
               if (snapshot.hasData) {
-                return ViewDashBoard();
+                return DashboardView();
               }
               return ViewLogInScreen();
             }));

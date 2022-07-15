@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
 
-class Theme {
-  Color color1 = Color(0xFF111);
-  Color color2 = Color(0xFF111);
-  Color color3 = Color(0xFF111);
-  Color color4 = Color(0xFF111);
-
-  int spacing(int value) {
-    return value * 8;
-  }
+class AppColors {
+  var colorOnHold = const Color.fromARGB(255, 5, 82, 236).withOpacity(0.5);
 }

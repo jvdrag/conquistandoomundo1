@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../cadastro/fireBaseAuthCadastroScreen.dart';
 
-class barzin extends StatelessWidget implements PreferredSizeWidget {
+class Header extends StatelessWidget implements PreferredSizeWidget {
   String color = 'kk';
 
   @override

@@ -1,5 +1,5 @@
-import 'package:conquistandoomundo/pages/dashboardAulas/viewAulas.dart';
-import 'package:conquistandoomundo/pages/dashboardAulas/views/appbar.dart';
+import 'package:conquistandoomundo/pages/dashboardAulas/dashboard_view.dart';
+import 'package:conquistandoomundo/pages/dashboardAulas/views/header.dart';
 import 'package:flutter/material.dart';
 
 class ViewDashBoard extends StatelessWidget {
@@ -14,8 +14,8 @@ class ViewDashBoard extends StatelessWidget {
     TrocarCorDashboardHeader trocarCorDashboardHeaderAulas = TrocarCorDashboardHeader(color: 'Aulas');
 */
     return Scaffold(
-      body: ViewAulas(),
-      appBar: barzin(),
+      body: Text(""),
+      appBar: Header(),
 
       //body:DashBoardBody(),
     );
