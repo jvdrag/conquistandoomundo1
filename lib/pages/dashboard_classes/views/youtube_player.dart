@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:conquistandoomundo/pages/dashboard_classes/views/list_playlist_builder.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +19,8 @@ class _YoutubePlayer extends State<YoutubePlayer> {
   late YoutubePlayerController _controller;
 
   List<String> ids = [];
+
+  double playerWidth = 400;
 
   _YoutubePlayer(this.ids);
 
@@ -61,12 +64,12 @@ class _YoutubePlayer extends State<YoutubePlayer> {
               return Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Expanded(child: player),
+                  const Expanded(child: player),
                   Column(
                     children: [
                       SizedBox(
-                        width: 300,
-                        child: SingleChildScrollView(),
+                        width: playerWidth,
+                        child: SingleChildScrollView(child: Playlist(ids)),
                       ),
                     ],
                   ),
