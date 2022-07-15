@@ -1,32 +1,32 @@
 class YoutubeVideoInfo {
-  String? title;
-  String? authorName;
-  String? authorURL;
-  String? type;
-  int? height;
-  int? width;
-  String? version;
-  String? providerName;
-  String? providerURL;
-  int? thumbnailHeight;
-  int? thumbnailWidth;
-  String? thumbnailURL;
-  String? html;
+  String title = "";
+  String authorName = "";
+  String authorURL = "";
+  String type = "";
+  int height = 0;
+  int width = 0;
+  String version = "";
+  String providerName = "";
+  String providerURL = "";
+  int thumbnailHeight = 0;
+  int thumbnailWidth = 0;
+  String thumbnailURL = "";
+  String html = "";
 
   YoutubeVideoInfo(
-      {this.title,
-      this.authorName,
-      this.authorURL,
-      this.type,
-      this.height,
-      this.width,
-      this.version,
-      this.providerName,
-      this.providerURL,
-      this.thumbnailHeight,
-      this.thumbnailWidth,
-      this.thumbnailURL,
-      this.html});
+      {required this.title,
+      required this.authorName,
+      required this.authorURL,
+      required this.type,
+      required this.height,
+      required this.width,
+      required this.version,
+      required this.providerName,
+      required this.providerURL,
+      required this.thumbnailHeight,
+      required this.thumbnailWidth,
+      required this.thumbnailURL,
+      required this.html});
 
   YoutubeVideoInfo.fromJson(Map<String, dynamic> json) {
     title = json['title'];

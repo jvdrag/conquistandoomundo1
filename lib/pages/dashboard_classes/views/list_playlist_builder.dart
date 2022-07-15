@@ -37,7 +37,7 @@ class _PlaylistState extends State<Playlist> {
                 builder: ((context, snapshot) {
                   var data = snapshot.data;
                   if (data != null) {
-                    return Text(data.title!);
+                    return Text(data.title);
                   }
                   return Text("Default");
                 }))));
