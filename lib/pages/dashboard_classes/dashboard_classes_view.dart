@@ -21,7 +21,7 @@ class _DashboardClassesState extends State<DashboardClasses> {
         theme: ThemeData(
           brightness: Brightness.dark,
           primarySwatch: Colors.deepPurple,
-          scaffoldBackgroundColor: Color.fromARGB(255, 11, 20, 35),
+          scaffoldBackgroundColor: Color.fromARGB(255, 12, 23, 42),
         ),
         debugShowCheckedModeBanner: false,
         home: YoutubePlayer(widget.ids),

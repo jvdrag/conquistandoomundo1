@@ -1,5 +1,7 @@
 import 'dart:convert';
-
+import 'package:conquistandoomundo/pages/dashboard_classes/views/youtube_player.dart';
+import 'package:flutter/material.dart';
+import 'package:image_network/image_network.dart';
 import 'package:conquistandoomundo/domain/models/youtube_video_info.dart';
 import 'package:conquistandoomundo/infra/repository.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,15 +31,34 @@ class _PlaylistState extends State<Playlist> {
     }).toList();
 
     return Container(
-        height: 100,
+        height: 590,
         child: ListView.builder(
             itemCount: items.length,
             itemBuilder: (context, index) => FutureBuilder<YoutubeVideoInfo?>(
                 future: items[index],
                 builder: ((context, snapshot) {
                   var data = snapshot.data;
+
                   if (data != null) {
-                    return Text(data.title);
+                    return Column(children: [
+                      Row(
+                        children: [
+                          ImageNetwork(
+                            image: data.thumbnailURL,
+                            height: 70,
+                            width: 100,
+                            onPointer: true,
+                          ),
+                          SizedBox(
+                            width: 15,
+                          ),
+                          Text(data.title),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                    ]);
                   }
                   return Text("Default");
                 }))));

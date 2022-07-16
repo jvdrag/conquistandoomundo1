@@ -8,8 +8,8 @@ class YoutubeVideoInfo {
   String version = "";
   String providerName = "";
   String providerURL = "";
-  int thumbnailHeight = 0;
-  int thumbnailWidth = 0;
+  int thumbnailHeight = 30;
+  int thumbnailWidth = 30;
   String thumbnailURL = "";
   String html = "";
 

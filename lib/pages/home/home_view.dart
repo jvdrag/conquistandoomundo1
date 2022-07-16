@@ -14,7 +14,7 @@ class Home extends StatelessWidget {
 
     return Scaffold(
       appBar: Header(),
-      backgroundColor: Color.fromARGB(255, 7, 20, 36),
+      backgroundColor: Color.fromARGB(255, 6, 18, 32),
       body: Column(
         children: [
           Container(

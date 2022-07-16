@@ -20,7 +20,7 @@ class _YoutubePlayer extends State<YoutubePlayer> {
 
   List<String> ids = [];
 
-  double playerWidth = 400;
+  double playerWidth = 500;
 
   _YoutubePlayer(this.ids);
 
