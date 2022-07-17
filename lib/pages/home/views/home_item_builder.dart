@@ -14,8 +14,8 @@ Widget HomeItemBuilder(BuildContext context, List<String> ids, String image) {
       }, // Handle your callback.
       splashColor: AppColors().colorOnHold,
       child: Ink(
-        height: width < limit ? 180 : 197,
-        width: width < limit ? 135 : 150,
+        height: width < limit ? 255 : 270,
+        width: width < limit ? 180 : 195,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(image),

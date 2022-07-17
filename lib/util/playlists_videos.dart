@@ -1,4 +1,19 @@
-var StartHereIDs = ['w9jYgSDhP24', '-ciEovARap8'];
+var InterviewIDs = [
+  'Tb3FdYqsTTo',
+  'ji9erMiA',
+  'tKxaYsmwYmE',
+  'R1vYYRqVd9o',
+  'D_6nDyQ_mYo',
+  'HnPU1U440_4',
+  '_Ajv2yrTpW8',
+  'cdmaK_Z02ao',
+  '7ygzH0uz9uY',
+  'DORsYvMfE_8',
+  'hs5bComL2tY',
+  'fCfU5ZDO7Yg',
+  'FhDe3SCGMTo',
+  '3nOAVEtLeYE',
+];
 
 var ApplicationIDs = [
   '6V626OoAJMo',
@@ -129,6 +144,7 @@ var DETIDs = [
   'v2DAkvaJJnM',
   'OieS67MKR4k',
 ];
-
-var InterviewsIDs = [];
-var UniversitiesIDs = [];
+var UniversitiesIDs = [
+  'bgY6V1zffJY',
+  'rxogxlSeDU8',
+];
