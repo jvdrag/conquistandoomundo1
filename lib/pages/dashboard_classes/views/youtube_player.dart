@@ -1,6 +1,5 @@
 import 'dart:developer';
-
-import 'package:conquistandoomundo/pages/dashboard_classes/views/list_playlist_builder.dart';
+import 'package:conquistandoomundo/pages/dashboard_classes/views/playlist.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,7 +19,7 @@ class _YoutubePlayer extends State<YoutubePlayer> {
 
   List<String> ids = [];
 
-  double playerWidth = 500;
+  double playerWidth = 400;
 
   _YoutubePlayer(this.ids);
 
@@ -49,6 +48,8 @@ class _YoutubePlayer extends State<YoutubePlayer> {
       log('Exited Fullscreen');
     };
   }
+
+  _loadVideo(String id) {}
 
   @override
   Widget build(BuildContext context) {
