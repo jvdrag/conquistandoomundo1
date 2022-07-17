@@ -13,20 +13,23 @@ class Home extends StatefulWidget {
 class building extends State<Home> {
   int widgetId = 1;
   Widget Modulo1(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    final double telaTocaDeLayout = 1150.0;
+
     return Container(
       child: Row(
         children: [
           HomeItemBuilder(context, ApplicationIDs, 'assets/Mdulo21.png'),
           SizedBox(
-            width: 90,
+            width: width < telaTocaDeLayout ? 75 : 90,
           ),
           HomeItemBuilder(context, MathIDs, 'assets/Mdulo31.png'),
           SizedBox(
-            width: 90,
+            width: width < telaTocaDeLayout ? 75 : 90,
           ),
           HomeItemBuilder(context, EnglishIDs, 'assets/Mdulo41.png'),
           SizedBox(
-            width: 90,
+            width: width < telaTocaDeLayout ? 75 : 90,
           ),
           HomeItemBuilder(context, EssaysIDs, 'assets/Mdulo52.png'),
         ],
@@ -35,20 +38,22 @@ class building extends State<Home> {
   }
 
   Widget Modulo2(BuildContext context) {
+    var width = MediaQuery.of(context).size.width;
+    final double telaTocaDeLayout = 1150.0;
     return Container(
       child: Row(
         children: [
           HomeItemBuilder(context, TOEFLIDs, 'assets/Mdulo62.png'),
           SizedBox(
-            width: 90,
+            width: width < telaTocaDeLayout ? 75 : 90,
           ),
           HomeItemBuilder(context, DETIDs, 'assets/123.png'),
           SizedBox(
-            width: 90,
+            width: width < telaTocaDeLayout ? 75 : 90,
           ),
           HomeItemBuilder(context, InterviewIDs, 'assets/321.png'),
           SizedBox(
-            width: 90,
+            width: width < telaTocaDeLayout ? 75 : 90,
           ),
           HomeItemBuilder(context, UniversitiesIDs, 'assets/ult.png'),
         ],
@@ -77,8 +82,6 @@ class building extends State<Home> {
     var screenWidth = MediaQuery.of(context).size.width;
     var screenHeight = MediaQuery.of(context).size.height;
 
-    final double telaTocaDeLayout = 1150.0;
-
     return Scaffold(
       appBar: Header(),
       backgroundColor: Color.fromARGB(255, 6, 18, 32),
@@ -88,13 +91,12 @@ class building extends State<Home> {
               width: screenWidth,
               height: screenHeight * .45,
               decoration: const BoxDecoration(
-                color: Colors.red,
+                color: Color.fromARGB(255, 6, 18, 32),
                 image: DecorationImage(
-                    image: AssetImage('assets/Desktop1.png'),
-                    fit: BoxFit.fitWidth),
+                    image: AssetImage('assets/Desktop1.png'), fit: BoxFit.fill),
               )),
           SizedBox(
-            height: screenHeight * .08,
+            height: screenHeight * .035,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 
 Widget HomeItemBuilder(BuildContext context, List<String> ids, String image) {
   var width = MediaQuery.of(context).size.width;
-  var limit = MediaQuery.of(context).size.height;
+  var height = MediaQuery.of(context).size.height;
+  final double telaTocaDeLayout = 1150.0;
   return Material(
     child: InkWell(
       onTap: () {
@@ -14,8 +15,8 @@ Widget HomeItemBuilder(BuildContext context, List<String> ids, String image) {
       }, // Handle your callback.
       splashColor: AppColors().colorOnHold,
       child: Ink(
-        height: width < limit ? 255 : 270,
-        width: width < limit ? 180 : 195,
+        height: height < telaTocaDeLayout ? 300 : 315,
+        width: width < telaTocaDeLayout ? 210 : 225,
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(image),
