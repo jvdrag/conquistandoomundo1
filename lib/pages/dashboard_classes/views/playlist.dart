@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:conquistandoomundo/pages/dashboard_classes/views/youtube_player.dart';
 import 'package:conquistandoomundo/util/widgets/spacer_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:image_network/image_network.dart';
@@ -21,21 +20,25 @@ class _PlaylistState extends State<Playlist> {
   List<String> ids = [];
 
   List<YoutubeVideoInfo?> listData = [];
+  List<Future<YoutubeVideoInfo?>> items = [];
 
   _PlaylistState(this.ids);
 
   @override
-  Widget build(BuildContext context) {
-    const thumbnailWidth = 100.0;
-    const thumbnailHeight = 0.5625 * thumbnailWidth;
-
-    List<Future<YoutubeVideoInfo?>> items = widget.ids.map((i) async {
+  void initState() {
+    items = widget.ids.map((i) async {
       var result = await Repository.getVideoInfo(i);
       if (result.statusCode == 200) {
         var data = YoutubeVideoInfo.fromJson(jsonDecode(result.body));
         return data;
       }
     }).toList();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    const thumbnailWidth = 100.0;
+    const thumbnailHeight = 0.5625 * thumbnailWidth;
 
     return Container(
         height: 590,
@@ -47,37 +50,6 @@ class _PlaylistState extends State<Playlist> {
                   context.ytController.load(widget.ids[index]);
                 }
 
-                /*return Builder(builder: (context) {
-                  var data = listData[index];
-                  if (data != null) {
-                    return Column(children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          buildSpacer(width: 15),
-                          ImageNetwork(
-                            image: data.thumbnailURL,
-                            height: thumbnailHeight,
-                            width: thumbnailWidth,
-                            onPointer: true,
-                            onTap: () => _loadItem(),
-                          ),
-                          buildSpacer(width: 15),
-                          MouseRegion(
-                              cursor: SystemMouseCursors.click,
-                              child: GestureDetector(
-                                onTap: () => _loadItem(),
-                                child: Flexible(
-                                  child: Text(data.title),
-                                ),
-                              ))
-                        ],
-                      ),
-                      buildSpacer(height: 10)
-                    ]);
-                  }
-                  return Text("");
-                }); */
                 return FutureBuilder<YoutubeVideoInfo?>(
                     future: items[index],
                     builder: ((context, snapshot) {
@@ -110,7 +82,7 @@ class _PlaylistState extends State<Playlist> {
                           buildSpacer(height: 10)
                         ]);
                       }
-                      return Text("Default");
+                      return Text("");
                     }));
               });
         }));

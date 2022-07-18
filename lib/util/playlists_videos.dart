@@ -1,3 +1,12 @@
+var interviewPlaylistId = "";
+var applicationPlaylistId = "";
+var mathPlaylistId = "";
+var englishPlaylistId = "";
+var essaysPlaylistId = "";
+var TOEFLPlaylistId = "";
+var DETPlaylistId = "";
+var universitiesPlaylistId = "";
+
 var InterviewIDs = [
   'Tb3FdYqsTTo',
   'ji9erMiA',
