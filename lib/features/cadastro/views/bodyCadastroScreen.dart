@@ -4,7 +4,6 @@ import 'package:conquistandoomundo/features/dashboardAulas/viewAulas.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import '../../bemVindoScreen/viewBemVindo.dart';
 import '../fireBaseAuthCadastroScreen.dart';
 
 class BodyCadastroScreen extends StatelessWidget {
@@ -195,11 +194,13 @@ class BodyCadastroScreen extends StatelessWidget {
                                             color:
                                                 Color.fromARGB(255, 165, 217, 208))))),
                             onPressed: () async {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) =>  ViewDashBoard()));
+
                               final form = formKeyAuthentication.currentState!;
                               if (form.validate() &&
                                   verificaPasswordController.text ==
                                       passwordController.text) {
-                                print('aaaaaaaaaaaaaa');
 
                                 await AuthServiceCadasto().registerUser(
                                     emailController.text,

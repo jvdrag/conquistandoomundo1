@@ -1,6 +1,7 @@
-import 'package:conquistandoomundo/features/pergunta1/viewPergunta1.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../pergunta1/viewPergunta1.dart';
 
 class BemVindoScreen extends StatelessWidget {
   const BemVindoScreen({Key? key}) : super(key: key);

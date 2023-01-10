@@ -1,4 +1,3 @@
-import 'package:conquistandoomundo/features/bemVindoScreen/viewBemVindo.dart';
 import 'package:conquistandoomundo/features/cadastro/fireBaseAuthCadastroScreen.dart';
 import 'package:conquistandoomundo/features/cadastro/viewCadastroScreen.dart';
 import 'package:conquistandoomundo/features/dashboardAulas/viewAulas.dart';
@@ -11,7 +10,6 @@ import 'features/LogInScreen/viewLogInScreen.dart';
 import 'features/LogInScreen/views/bodyLogInScreen.dart';
 import 'features/dashBoard/viewDashBoard.dart';
 import 'features/dashboardAulas/viewVideosAulas.dart';
-import 'features/pergunta1/viewPergunta1.dart';
 import 'firebase_options.dart';
 import 'package:conquistandoomundo/features/dashboardAulas/viewVideosAulas.dart';
 

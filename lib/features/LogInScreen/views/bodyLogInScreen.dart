@@ -2,10 +2,10 @@ import 'package:conquistandoomundo/features/cadastro/fireBaseAuthCadastroScreen.
 import 'package:conquistandoomundo/features/cadastro/viewCadastroScreen.dart';
 import 'package:conquistandoomundo/features/dashBoard/viewDashBoard.dart';
 import 'package:conquistandoomundo/features/dashboardAulas/viewAulas.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
-import '../../bemVindoScreen/viewBemVindo.dart';
 import '../fireBaseAuthLogInScreen.dart';
 
 class BodyLogInScreen extends StatelessWidget {
@@ -101,7 +101,7 @@ class BodyLogInScreen extends StatelessWidget {
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize:
-                                    screenWidth > telaTocaDeLayout ? 16 : 14,
+                                screenWidth > telaTocaDeLayout ? 16 : 14,
 
                                 //fontWeight: FontWeight.bold,
                               ),
@@ -112,9 +112,9 @@ class BodyLogInScreen extends StatelessWidget {
                           height: 60,
                           child: TextFormField(
                             validator: (emailController) =>
-                                !EmailValidator.validate(emailController!)
-                                    ? 'Digite um email valido'
-                                    : null,
+                            !EmailValidator.validate(emailController!)
+                                ? 'Digite um email valido'
+                                : null,
                             controller: emailController,
                             decoration: InputDecoration(
                                 border: OutlineInputBorder(
@@ -162,21 +162,20 @@ class BodyLogInScreen extends StatelessWidget {
                               ),
                               style: ButtonStyle(
                                   foregroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.white),
+                                  MaterialStateProperty.all<Color>(
+                                      Colors.white),
                                   backgroundColor:
-                                      MaterialStateProperty.all<Color>(
-                                          Colors.blueGrey),
+                                  MaterialStateProperty.all<Color>(
+                                      Colors.blueGrey),
                                   shape: MaterialStateProperty.all<
-                                          RoundedRectangleBorder>(
+                                      RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10.0),
-                                  ))),
+                                        borderRadius: BorderRadius.circular(10.0),
+                                      ))),
                               onPressed: () async {
                                 final form =
-                                    formKeyAuthentication.currentState!;
+                                formKeyAuthentication.currentState!;
                                 if (form.validate()) {
-                                  print('aaaaaaaaaaaaaa');
 
                                   await AuthServiceCadasto().loginUser(
                                       emailController.text,
@@ -186,13 +185,14 @@ class BodyLogInScreen extends StatelessWidget {
                         ),
                         TextButton(
                             child: Text(
-                                "Ainda não possui uma conta?".toUpperCase(),
+
+                                "Ainda nÃo possui uma conta?".toUpperCase(),
                                 style: TextStyle(
                                     fontSize: 12, color: Colors.white)),
                             onPressed: () {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) =>
-                                      const ViewCadastroScreen()));
+                                  const ViewCadastroScreen()));
                             }),
                       ],
                     ),
